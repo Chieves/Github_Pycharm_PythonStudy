@@ -1,6 +1,5 @@
 # coding:utf-8
 # Python程序：Hello World 第一个Python程序：Hello World！
-import random
 
 print('Hello World! 你好，Python的世界！')
 
@@ -37,21 +36,6 @@ num = 12
 string = 'bang!'
 total = string * (len(word) - num)  # 等价于字符串‘bang!'*4
 print(total)
-
-# 字符串的分片于索引
-name = 'My name is Mike'
-print(name[0])
-print(name[-4])
-print(name[11:14])
-print(name[11:15])
-print(name[5:])
-print(name[:5])
-
-# 找出你朋友中的魔鬼
-word = 'friends'
-find_the_evil_in_your_friends = word[0] + \
-                                word[2:4] + word[-3:-1]
-print(find_the_evil_in_your_friends)
 
 # 网址链接尾部倒数10个字符命名
 url = 'http://www.stie.cn/lksdjforiurgldkjlkjlj1209dlkjf.jpg'
@@ -94,7 +78,6 @@ print(search + ' is at ' + str(num_b.find(search)) + ' to ' + str(num_b.find(sea
 print('{} a word she can get what she {} for.'.format('with', 'came'))
 print('{preposition} a word she can get what she {verb} for.'.format(preposition='with', verb='came'))
 print('{0} a word she can get what she {1} for.'.format('with', 'came'))
-
 
 city = input("请输入城市的名称(pingyin)：")
 url = "http://apistore.baidu.com/microservice/weather?citypinyin={}".format(city)

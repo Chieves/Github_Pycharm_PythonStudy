@@ -1,8 +1,13 @@
-# 函数
+# coding:utf-8
+import math
+
+
 # print() 是一个放入对象就能将结果打印的函数
 # input() 是一个可以让用户输入信息的函数
 # len() 是一个可以测量对象长度的函数
 # int() 是一个可以将字符串类型的数字转化成整数类型的函数
+
+# 系统内建函数 Build-in Functions
 # abs()     dict()   help()     min()       setatt()
 # all()     dir()    hex()      next()      slice()
 # any()     divmod() id()       object()    sorted()
@@ -19,24 +24,21 @@
 
 # 定义函数 关键字def 函数名（自己取） 参数2个（可选） 冒号：一定不能少
 #        此处有缩进 关键字return 结果
-def function():
-    return 'something'
+# def function(arg1, arg2):
+#     return 'Something'
 
-
-print(function())
-
-
-# 摄氏度转换公式
+# 摄氏度（Celsius）与华氏度（fahrenheit）转换公式
 def fahrenheit_converter(C):
     fahrenheit = C * 9 / 5 + 32
     return str(fahrenheit) + '°F'
 
 
-lyric_length = len('I Cry Out For Magic!')
-print('歌词长度为：' + str(lyric_length))
-
 C2F = fahrenheit_converter(35)
 print('35°转换为华氏度为：' + C2F)
+
+# 歌词长度计算函数
+lyric_length = len('I Cry Out For Magic!')
+print('歌词长度为：' + str(lyric_length))
 
 
 # 重量转化器函数
@@ -56,8 +58,6 @@ def g2kg(g):
 
 
 print(g2kg(200345))
-
-import math
 
 
 # 求直角三角形斜边长的函数 math.sqrt 求平方根 pow(x,y):x的y次方
@@ -92,9 +92,9 @@ def trapezoid_area(base_up, base_down, height):
 print(trapezoid_area(1, 2, 3))
 # 关键词参数传入
 print(trapezoid_area(base_up=4, base_down=5, height=6))
-# 参数反序传入
+# 参数反序传入，使用关键词参数传入是正确的
 print(trapezoid_area(height=6, base_down=5, base_up=4))
-# 正序传入，正确
+# 正序传入，正确。如果混合传入，则顺序必须正确。要谨记：位置参数不能在关键词参数的后面
 print(trapezoid_area(4, 5, height=6))
 
 # 参数的命名和变量的命名, 注意位置参数的传入，与变量的命名无关系
@@ -118,7 +118,7 @@ print('   *', ' *  *', '*  *  *', '  |  ')
 print('    *', '  *   *', ' *  *  *', '    |    ', sep='\n')
 
 
-# 参数设定默认值
+# 参数设定默认值，在定义的时候给它赋值即可
 def trapezoid_area_default(base_up, base_down, height=3):
     return 1 / 2 * (base_up + base_down) * height
 
@@ -130,13 +130,14 @@ print(trapezoid_area_default(1, 2, height=15))
 
 # 敏感词过滤器
 # 打开文件操作
-file = open('E://Python/Code/GitPython/ReadWriteFiles/file.txt', 'w')
-file.write('\nHello Python!')
+# 参数'w'代表作为写入模式，如果没有就在该路径创建一个该名称的文本，如果有则追加覆盖文本内容。
+file = open('E://Python/Code/Github_Pycharm_PythonStudy/ReadWriteFiles/file_function.txt', 'w')
+file.write('Hello Python! This is a function test.')
 
 
 # 文件操作函数
 def text_creat(name, msg):
-    desktop_path = 'E://Python/Code/GitPython/ReadWriteFiles/'
+    desktop_path = 'E://Python/Code/Github_Pycharm_PythonStudy/ReadWriteFiles/'
     full_path = desktop_path + name + '.txt'
     file = open(full_path, 'w')
     file.write(msg)
@@ -161,4 +162,18 @@ def consored_text_creat(name, msg):
     text_creat(name, clean_msg)
 
 
-consored_text_creat('Try', 'lame!lame!lame!')
+consored_text_creat('input_file', 'this is a input text test : lame!lame!lame!')
+
+# 数学运算符学习
+a = 9
+b = 2
+print(a + b)
+print(a - b)
+print(a * b)
+print(a / b)
+# 取模，返回除法的余数
+print(a % b)
+# 幂，返回x的y次幂
+print(a ** b)
+# 取整除，返回商的整数部分
+print(a // b)

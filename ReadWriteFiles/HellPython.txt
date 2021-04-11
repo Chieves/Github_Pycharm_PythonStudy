@@ -1,0 +1,2 @@
+Hello Python ! 
+I have write the message to file!
